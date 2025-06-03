@@ -44,19 +44,19 @@ public class Main {
                     spendings += spend;
                     break;
                 case 3:
-                    int x = taxEarningMinusSpendings(earnings, spendings);
-                    int y = taxEarnings(earnings);
+                    int taxMinus = taxEarningMinusSpendings(earnings, spendings);
+                    int taxEarnihg = taxEarnings(earnings);
 
-                    if (x < y) {
+                    if (taxMinus < taxEarnihg) {
                         System.out.println("Мы советуем вам УСН доходы минус расходы");
-                        System.out.println("Ваш налог составит: " + x + "рублей");
-                        System.out.println("Налог на другой системе: " + y + "рублей");
-                        System.out.println("Экономия: " + (y - x) + "рублей");
-                    } else if (x > y) {
+                        System.out.println("Ваш налог составит: " + taxMinus + "рублей");
+                        System.out.println("Налог на другой системе: " + taxEarnihg + "рублей");
+                        System.out.println("Экономия: " + (taxEarnihg - taxMinus) + "рублей");
+                    } else if (taxMinus > taxEarnihg) {
                         System.out.println("Мы советуем вам УСН доходы");
-                        System.out.println("Ваш налог составит: " + y + "рублей");
-                        System.out.println("Налог на другой системе: " + x + "рублей");
-                        System.out.println("Экономия: " + (x - y) + "рублей");
+                        System.out.println("Ваш налог составит: " + taxEarnihg + "рублей");
+                        System.out.println("Налог на другой системе: " + taxMinus + "рублей");
+                        System.out.println("Экономия: " + (taxMinus - taxEarnihg) + "рублей");
                     } else System.out.println("Можете выбрать любую систему налогообложения");
                     break;
                 default:
